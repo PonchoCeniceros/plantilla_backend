@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import api from '@/api'
+import api from './api'
 
 // Cargar variables de entorno desde .env
 dotenv.config();
