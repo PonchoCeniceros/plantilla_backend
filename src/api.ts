@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-
+import { ApiResponse } from '@/domain/apiResponse';
 /**
  * se instancia la API
  */
@@ -9,7 +9,14 @@ const api = express();
  * ruta base de la API
  */
 api.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript with Express!');
+
+  const response: ApiResponse = {
+    isOk: true,
+    message: 'Hello, TypeScript with Express!',
+    data: null
+  };
+
+  res.status(200).json(response);
 });
 
 /**
